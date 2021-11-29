@@ -22,7 +22,7 @@
  * @copyright All rights reserved
  * @brief Creating roomba_walker node.
  */
-#include "roombaWalker.hpp"
+#include "../include/auto_roomba/roombaWalker.hpp"
 
 int main(int argc, char **argv) {
     ros::init(argc, argv, "roomba_walker");

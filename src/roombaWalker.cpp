@@ -23,13 +23,13 @@
  * @brief Logic for obstacle avoidance for roomba vaccum cleaner
  */
 #include <iostream>
-#include "roombaWalker.hpp"
+#include "../include/auto_roomba/roombaWalker.hpp"
 
 RoombaWalker::RoombaWalker() {
     minimumDistance = 0.5;
     obstacle = false;
     // Publishing velocity into the node.
-    vel = nodeh.advertise<geometry_msgs::Twist>("/cmd_vel_mux/input/navi", 500);
+    vel = nodeh.advertise<geometry_msgs::Twist>("/cmd_vel", 500);
     // Subscribing to the laser scan message.
     scan = nodeh.subscribe <sensor_msgs::LaserScan> ("/scan", 500, \
                                  &RoombaWalker::scanCallback, this);
