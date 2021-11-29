@@ -1,11 +1,11 @@
 <launch>
-  <arg name= "rosbagRecorder" default= "false"/>
+  <arg name= "rosbag_record" default= "false"/>
   <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_house.launch"> 
   </include>
 
  <node pkg= "auto_roomba" name= "roomba_walker" type= "walker" output="screen"/>
 
-  <node pkg= "rosbag" name= "record_bag" type= "record"	args = "--duration=15 -a -O $(find auto_roomba)/results/roombarecord.bag -x (.*)/camera/(.*)" if = "$(arg rosbagRecorder)"
-	/>
+ <node pkg="rosbag" type="record" name="rosbag_node" args="-a -O $(find auto_roomba)/results/roombarecord --duration=15 --exclude '/camera/*'"
+        if="$(arg rosbag_record)"/>
 
 </launch>
