@@ -39,7 +39,7 @@ catkin_make
 1) To launch the program
 ```
 cd ~/workspace/
-source devel/setup.basha
+source devel/setup.bash
 roslaunch auto_roomba roomba.launch rosbagRecorder:=false
 # Change rosbagRecorde:=true to record a bag file for 15 seconds
 ```
