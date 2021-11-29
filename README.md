@@ -2,8 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ---
-
-[![Bagfile: link](https://img.shields.io/badge/License-MIT-yellow.svg)](https://drive.google.com/file/d/1ONlMlc4U2EQrxI3sEe9bCFMNWGaF0u8K/view?usp=sharing)
+[![BagFile Link](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](https://drive.google.com/file/d/1ONlMlc4U2EQrxI3sEe9bCFMNWGaF0u8K/view?usp=sharing)
 
 ## Introduction
 
