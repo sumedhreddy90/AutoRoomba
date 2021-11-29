@@ -23,6 +23,7 @@
  * @brief Logic for obstacle avoidance for roomba vaccum cleaner
  */
 #include <iostream>
+#include <unistd.h>
 #include "../include/auto_roomba/roombaWalker.hpp"
 
 RoombaWalker::RoombaWalker() {
@@ -49,19 +50,13 @@ void RoombaWalker::resetRoomba() {
     msg.angular.z = 0.0;
 }
 
-bool RoombaWalker::getObstacle() {
-    return obstacle;
-}
-
 void RoombaWalker::scanCallback(const sensor_msgs::LaserScan::ConstPtr& msg) {
     obstacle = false;
     ///  Checking obstace within minimum range.
-    for (float m : msg->ranges) {
-        if (m < minimumDistance) {
+        if (msg->ranges[0] < minimumDistance) {
             obstacle = true;
-            ROS_INFO("Obstacle detected at %f distance!", m);
+            ROS_INFO("Obstacle detected at %f distance!", msg->ranges[0]);
         }
-    }
 }
 
 void RoombaWalker::moveRoomba() {
@@ -78,6 +73,8 @@ void RoombaWalker::moveRoomba() {
                     msg.linear.x = 0.0;
                     msg.angular.z = -0.5;
             }
+            usleep(1000000);
+            obstacle= false;
         //  Moving roomba forward
         } else {
             ROS_INFO("Clear Path, Moving as Planned!");
@@ -90,4 +87,3 @@ void RoombaWalker::moveRoomba() {
         loop_rate.sleep();
     }
 }
-
