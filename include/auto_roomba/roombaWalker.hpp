@@ -41,14 +41,14 @@ class RoombaWalker {
     void scanCallback(const sensor_msgs::LaserScan::ConstPtr& msg);
 
     /**
-     * @brief Resets the robot velocities.
+     * @brief Resets the Roomba velocities.
      */
-    void resetBot();
+    void resetRoomba();
 
     /**
-     * @brief Moves the robot in world map.
+     * @brief Moves the Roomba in world map.
      */
-    void moveBot();
+    void moveRoomba();
 };
 
 #endif /* INCLUDE_ROOMBAWALKER_HPP_ */
