@@ -22,8 +22,8 @@
  * @copyright All rights reserved
  * @brief class for obstacle avoidance for roomba vaccum cleaner
  */
-#ifndef INCLUDE_ROOMBAWALKER_HPP_
-#define INCLUDE_ROOMBAWALKER_HPP_
+#ifndef INCLUDE_AUTO_ROOMBA_ROOMBAWALKER_HPP_
+#define INCLUDE_AUTO_ROOMBA_ROOMBAWALKER_HPP_
 
 #include "ros/ros.h"
 #include "sensor_msgs/LaserScan.h"
@@ -75,4 +75,4 @@ class RoombaWalker {
     void moveRoomba();
 };
 
-#endif /* INCLUDE_ROOMBAWALKER_HPP_ */
+#endif /* INCLUDE_AUTO_ROOMBA_ROOMBAWALKER_HPP_ */
