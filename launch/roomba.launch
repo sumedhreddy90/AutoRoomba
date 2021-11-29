@@ -3,7 +3,7 @@
   <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_house.launch"> 
   </include>
 
- <node pkg= "roomba_walker" name= "roomba_walker" type= "walker" output="screen"/>
+ <node pkg= "auto_roomba" name= "roomba_walker" type= "walker" output="screen"/>
 
   <node pkg= "rosbag" name= "record_bag" type= "record"	args = "--duration=15 -a -O $(find auto_roomba)/results/roombarecord.bag -x (.*)/camera/(.*)" if = "$(arg rosbagRecorder)"
 	/>
